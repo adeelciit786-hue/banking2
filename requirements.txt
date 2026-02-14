@@ -1,0 +1,5 @@
+# Banking System - No external dependencies required
+# Python 3.6+ is required
+
+# For development/testing only
+# unittest is part of Python standard library
