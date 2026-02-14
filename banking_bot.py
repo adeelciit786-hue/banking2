@@ -19,6 +19,11 @@ st.markdown("""
         background-attachment: fixed;
     }
     
+    /* Global text color */
+    * {
+        color: #E8E8E8 !important;
+    }
+    
     /* Sidebar styling */
     [data-testid="stSidebar"] {
         background: linear-gradient(180deg, #002244 0%, #003d80 100%);
@@ -33,14 +38,14 @@ st.markdown("""
     
     /* Headers and titles */
     h1, h2, h3 {
-        color: #FFD700;
+        color: #FFD700 !important;
         font-weight: 700;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     
     /* Text styling */
     p, span, label {
-        color: #E8E8E8;
+        color: #E8E8E8 !important;
         font-weight: 500;
     }
     
