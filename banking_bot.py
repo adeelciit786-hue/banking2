@@ -4,7 +4,7 @@ from mistralai import Mistral
 
 # Page configuration
 st.set_page_config(
-    page_title="HBDB Banking Bot", 
+    page_title="Adeel Banking Assistant", 
     page_icon="🏦", 
     layout="wide",
     initial_sidebar_state="expanded"
@@ -160,7 +160,7 @@ def load_faq_data():
 
 # Create context from FAQ
 def create_context(df):
-    context = "You are a helpful HBDB Banking Assistant. Here are frequently asked questions and answers:\n\n"
+    context = "You are a helpful Adeel Banking Assistant. Here are frequently asked questions and answers:\n\n"
     for idx, row in df.iterrows():
         context += f"Q: {row['Question']}\nA: {row['Answer']}\n\n"
     return context
@@ -182,16 +182,16 @@ def get_mistral_response(user_message, context):
     return response.choices[0].message.content
 
 # Streamlit UI
-st.set_page_config(page_title="HBDB Banking Bot", page_icon="🏦", layout="wide")
+st.set_page_config(page_title="Adeel Banking Assistant", page_icon="🏦", layout="wide")
 
-st.title("🏦 HBDB Banking Assistant Bot")
+st.title("🏦 Adeel Banking Assistant")
 st.markdown("---")
 
 # Add decorative header
 st.markdown("""
 <div style="text-align: center; padding: 1rem; background: linear-gradient(90deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%); border-radius: 12px; margin-bottom: 2rem; border: 2px solid #FFD700;">
     <h3 style="color: #FFD700; margin: 0; font-size: 24px;">💼 Welcome to Your Digital Banking Assistant</h3>
-    <p style="color: #E8E8E8; margin: 0.5rem 0 0 0;">Powered by Mistral AI - Your 24/7 Banking Support</p>
+    <p style="color: #E8E8E8; margin: 0.5rem 0 0 0;">Your 24/7 Banking Support</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -203,14 +203,13 @@ context = create_context(df)
 with st.sidebar:
     st.markdown("""
     <div style="text-align: center; padding: 1.5rem; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%); border-radius: 12px; border: 2px solid #FFD700; margin-bottom: 1.5rem;">
-        <h2 style="color: #FFD700; margin: 0;">🏛️ HBDB Bank</h2>
+        <h2 style="color: #FFD700; margin: 0;">🏛️ Adeel Bank</h2>
         <p style="color: #E8E8E8; margin: 0.5rem 0 0 0; font-size: 14px;">Your Trusted Financial Partner</p>
     </div>
     """, unsafe_allow_html=True)
     
     st.header("ℹ️ About This Bot")
     st.info(
-        "🤖 **AI-Powered Assistant**: Instant answers to all your banking questions\n\n"
         "💡 **24/7 Support**: Available anytime, anywhere\n\n"
         "🔒 **Secure & Private**: Your information is protected\n\n"
         "📚 **Knowledge Base**: Powered by comprehensive FAQ database"
@@ -265,7 +264,7 @@ for message in st.session_state.chat_history:
         st.write(message["content"])
 
 # Chat input
-user_input = st.chat_input("Ask me anything about HBDB Banking services...")
+user_input = st.chat_input("Ask me anything about Adeel Banking services...")
 
 if user_input:
     # Add user message to history
@@ -290,8 +289,8 @@ if user_input:
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; padding: 1.5rem; background: linear-gradient(90deg, rgba(0, 82, 204, 0.1) 0%, rgba(0, 61, 153, 0.1) 100%); border-radius: 12px; border: 1px solid #FFD700; margin-top: 2rem;">
-    <p style="color: #FFD700; margin: 0; font-weight: bold;">🏦 HBDB Banking Assistant</p>
-    <p style="color: #E8E8E8; margin: 0.5rem 0 0 0; font-size: 14px;">Powered by Mistral Large AI | Secure Banking Solutions</p>
-    <p style="color: #A0A0A0; margin: 0.5rem 0 0 0; font-size: 12px;">© 2026 HBDB Bank. All rights reserved.</p>
+    <p style="color: #FFD700; margin: 0; font-weight: bold;">🏦 Adeel Banking Assistant</p>
+    <p style="color: #E8E8E8; margin: 0.5rem 0 0 0; font-size: 14px;">Secure Banking Solutions</p>
+    <p style="color: #A0A0A0; margin: 0.5rem 0 0 0; font-size: 12px;">© 2026 Adeel Bank. All rights reserved.</p>
 </div>
 """, unsafe_allow_html=True)

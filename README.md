@@ -1,10 +1,9 @@
-# 🏦 HBDB Banking Bot - AI-Powered Banking Assistant
+# 🏦 Adeel Banking Assistant
 
-A professional banking chatbot powered by **Mistral Large AI** and built with **Streamlit**. This bot provides instant answers to banking-related questions using a comprehensive FAQ database.
+A professional banking chatbot built with **Streamlit**. This bot provides instant answers to banking-related questions using a comprehensive FAQ database.
 
 ## ✨ Features
 
-- 🤖 **AI-Powered Responses** - Uses Mistral Large LLM for intelligent banking assistance
 - 💬 **Real-time Chat** - Interactive conversation interface
 - 📚 **FAQ Database** - 50+ banking questions and answers
 - 🔍 **Smart Search** - Search through FAQs instantly
@@ -178,5 +177,5 @@ For issues or questions:
 
 ---
 
-**Created with ❤️ for HBDB Bank**
-Powered by Mistral AI & Streamlit
+**Created with ❤️ for Adeel Bank**
+Powered by Streamlit
