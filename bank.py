@@ -75,8 +75,19 @@ class Bank:
         if not to_account:
             raise ValueError(f"Destination account {to_account_number} not found")
         
-        from_account.withdraw(amount, f"Transfer to {to_account_number}")
-        to_account.deposit(amount, f"Transfer from {from_account_number}")
+        # Ensure transactional integrity
+        try:
+            from_account.withdraw(amount, f"Transfer to {to_account_number}")
+            try:
+                to_account.deposit(amount, f"Transfer from {from_account_number}")
+            except Exception as e:
+                # Rollback withdrawal if deposit fails
+                from_account.deposit(amount, f"Transfer rollback to {to_account_number}")
+                raise ValueError(f"Transfer failed and was rolled back: {str(e)}")
+        except ValueError:
+            # Re-raise withdrawal errors (insufficient funds, etc.)
+            raise
+        
         return True
     
     def get_total_deposits(self) -> float:
