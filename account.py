@@ -36,7 +36,10 @@ class Account:
             description: Transaction description
             
         Returns:
-            True if successful, False otherwise
+            True on success
+            
+        Raises:
+            ValueError: If amount is not positive
         """
         if amount <= 0:
             raise ValueError("Deposit amount must be positive")
@@ -54,7 +57,10 @@ class Account:
             description: Transaction description
             
         Returns:
-            True if successful, False otherwise
+            True on success
+            
+        Raises:
+            ValueError: If amount is not positive or exceeds balance
         """
         if amount <= 0:
             raise ValueError("Withdrawal amount must be positive")

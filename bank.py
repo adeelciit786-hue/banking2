@@ -59,7 +59,10 @@ class Bank:
             amount: Amount to transfer
             
         Returns:
-            True if successful, False otherwise
+            True on success
+            
+        Raises:
+            ValueError: If amount is not positive, accounts don't exist, or insufficient funds
         """
         if amount <= 0:
             raise ValueError("Transfer amount must be positive")
